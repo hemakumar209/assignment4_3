@@ -1,0 +1,13 @@
+1. Create a box and whisker plot by class using mtcars dataset.
+
+    Ans:
+       >attach(mtcars)
+       >tempMtcars<-mtcars
+
+       >tempMtcars$mpgClass[tempMtcars$mpg <= 25] = "low"
+       >tempMtcars$mpgClass[tempMtcars$mpg > 25] = "high"
+       >tempMtcars$mpgClass
+
+      
+       >ggplot(tempMtcars, aes(mpgClass,mpg)) + stat_boxplot(geom = "errorbar", width = 0.2) + 
+          geom_boxplot()
